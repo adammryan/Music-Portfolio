@@ -9,7 +9,7 @@ const musicSections = [
             },
             {
                 name: "Adapt or Die!",
-                description: "In the middle of escaping a high containment facility, the alarms suddenly go off. Can you make it out in time?",
+                description: "In the middle of escaping a high-containment facility, the alarms suddenly go off. Can you make it out in time?",
                 filePath: "audio/adapt-or-die.mp3"
             },
             {
