@@ -1,0 +1,249 @@
+:root {
+    --background: #0b0d12;
+    --surface: #141821;
+    --surface-hover: #1a1f2b;
+    --text: #e8e6df;
+    --text-muted: #989aa3;
+    --accent: #c9a96e;
+    --accent-hover: #e0c58b;
+    --border: #282d38;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #1a2030 0%,
+            var(--background) 45%
+        );
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+.hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 140px 30px 120px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.section-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.section-nav-button {
+    padding: 10px 18px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.section-nav-button:hover,
+.section-nav-button:focus-visible {
+    background: var(--accent);
+    color: var(--background);
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.music-section {
+    margin-bottom: 130px;
+}
+
+.music-section h2 {
+    margin: 0 0 45px;
+    color: var(--accent);
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.track {
+    margin-bottom: 30px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.track:hover {
+    background: var(--surface-hover);
+    border-color: #3a404e;
+    transform: translateY(-2px);
+}
+
+.track h3 {
+    margin: 0 0 18px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.track audio {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.track p {
+    max-width: 750px;
+    margin: 0;
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 30px 100px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    padding: 18px 20px;
+    background: #0d1017;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.play-button {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--accent);
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.play-button:hover {
+    background: var(--accent);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+.player-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.player-title {
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.player-time {
+    color: var(--text-muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    appearance: none;
+    background: var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .audio-player {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .play-button {
+        width: 42px;
+        height: 42px;
+    }
+}
